@@ -1,0 +1,29 @@
+{
+  "name": "cordova-plugin-embedded-printer",
+  "version": "2.0.0",
+  "description": "a cordova plugin, a JS version of Alipay SDK(20190718211148)",
+  "cordova": {
+    "id": "cordova-plugin-embedded-printer",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "alipay",
+    "cordova-plugin-alipay",
+    "cordova-plugin-alipay-v2"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x1ongzhu/cordova-plugin-embedded-printer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/x1ongzhu/cordova-plugin-embedded-printer.git/issues"
+  },
+  "homepage": "https://github.com/x1ongzhu/cordova-plugin-embedded-printer.git#readme",
+  "author": "x1ongzhu",
+  "license": "ISC"
+}

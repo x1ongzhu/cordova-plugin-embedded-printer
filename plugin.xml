@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-embedded-printer" version="2.0.0"
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>EmbeddedPrinter</name>
+    <js-module name="EmbeddedPrinter" src="www/EmbeddedPrinter.js">
+        <clobbers target="cordova.plugins.EmbeddedPrinter"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="EmbeddedPrinter">
+                <param name="android-package" value="cn.x1ongzhu.EmbeddedPrinter"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+        </config-file>
+
+        <source-file src="src/android/EmbeddedPrinter.java" target-dir="src/cn/x1ongzhu"/>
+        <!-- <source-file src="src/android/jniLibs/arm64-v8a/libzyapi_common.so" target-dir="src/main/jniLibs/arm64-v8a" /> -->
+        <source-file src="src/android/jniLibs/armeabi/libzyapi_common.so" target-dir="src/main/jniLibs/armeabi-v7a" />
+        <lib-file src="src/android/lib/qs5501sdk.min.jar" />
+        <framework src="src/android/printer.gradle" custom="true" type="gradleReference"/>
+
+    </platform>
+</plugin>
