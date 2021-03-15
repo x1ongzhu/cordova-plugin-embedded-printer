@@ -29,6 +29,12 @@ public class EmbeddedPrinter extends CordovaPlugin {
                 0x05, 0x06, 0x44};
         //发送命令
         PrintUtils.send(bt2);
+
+//        // 关闭黑标命令
+//        byte[] bt1 = new byte[]{0x1F, 0x1B, 0x1F, (byte) 0x80, 0x04,
+//                0x05, 0x06, 0x66};
+//        //发送命令
+//        PrintUtils.send(bt1);
     }
 
     @Override
@@ -37,10 +43,8 @@ public class EmbeddedPrinter extends CordovaPlugin {
             String encodedImage = args.getString(0);
             byte[] decodedString = Base64.decode(encodedImage, Base64.DEFAULT);
             Bitmap bm = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-            Bitmap zbm = zoomImg(bm, 240, 200);
-            PrintUtils.printBitmap(1, zbm);
+            PrintUtils.printBitmap(1, bm);
             bm.recycle();
-            zbm.recycle();
         }
         return false;
     }
